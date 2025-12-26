@@ -6,19 +6,21 @@ import OurSolutionSection from "./components/OurSolutionSection";
 import LetterSection from "./components/LetterSection";
 import RecommendationSection from "./components/RecommendationSection";
 import CTASection from "./components/CTASection";
+import SectionTracker from "./components/SectionTracker";
 
 
 export default function Home() {
   return (
     <div>
-      <HeroSection />
+      <SectionTracker />
+      {/* <HeroSection />
       <ProblemSection />
       <StandardSection />
       <RealitySection />
       <OurSolutionSection />
       <LetterSection />
       <RecommendationSection />
-      <CTASection />
+      <CTASection /> */}
     </div>
   );
 }
