@@ -46,10 +46,6 @@ function BenefitList() {
 }
 
 
-
-
-
-
 export default function CTASection() {
   const [buttonText, setButtonText] = useState(
     '애매한 계약, 3건 700원으로 끝내기'
