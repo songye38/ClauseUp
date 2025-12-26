@@ -1,6 +1,8 @@
 
-
+'use client'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import posthog from 'posthog-js'
 
 
 function PriceBlock() {
@@ -49,9 +51,25 @@ function BenefitList() {
 
 
 export default function CTASection() {
+  const [buttonText, setButtonText] = useState(
+    '애매한 계약, 3건 700원으로 끝내기'
+  )
+
+  useEffect(() => {
+    posthog.onFeatureFlags(() => {
+      const variant = posthog.getFeatureFlag('cta_variant_test')
+
+      if (variant === 'variantA') {
+        setButtonText('애매한 계약, 3건 700원으로 끝내기')
+      } else if (variant === 'variantB') {
+        setButtonText('700원 결제하고 시작하기')
+      }
+      // 기본값은 초기 state에 넣어둠
+    })
+  }, [])
+
   return (
-    // <section className="relative w-full max-w-[430px] bg-white">
-    <section className="relative w-full bg-white bg-white">
+    <section className="relative w-full bg-white">
       {/* 파란 배경 */}
       <div className="absolute left-0 top-[77px] h-[588px] w-full bg-[#2855DD]" />
 
@@ -81,7 +99,7 @@ export default function CTASection() {
 
         {/* CTA 버튼 */}
         <button className="mt-10 w-full max-w-[365px] rounded-md bg-white px-6 py-[18px] text-[19px] font-extrabold text-[#2855DD]">
-          애매한 계약, 3건 700원으로 끝내기
+          {buttonText}
         </button>
       </div>
     </section>
