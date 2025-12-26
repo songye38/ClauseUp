@@ -23,7 +23,7 @@ export default function StandardSection() {
   return (
     <section ref={ref} className="w-full bg-white py-20">
       {/* Intro */}
-      <p className="mb-10 px-6 text-center text-[22px] leading-[30px]">
+      <p className="mb-10 px-6 text-center text-[22px] leading-[30px] text-black">
         계약의 문제는 문장이 아니라 <b>기준</b>입니다.<br />
         ClauseUp은 그 기준부터 정리합니다.
       </p>

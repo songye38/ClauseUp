@@ -1,9 +1,6 @@
-function CheckIcon() {
-  return (
-    <span className="inline-block h-[15px] w-[15px] rounded-sm border border-white" />
-  )
-}
 
+
+import Image from 'next/image'
 
 
 function PriceBlock() {
@@ -14,6 +11,7 @@ function PriceBlock() {
     </div>
   )
 }
+
 
 function BenefitList() {
   const benefits = [
@@ -26,7 +24,12 @@ function BenefitList() {
     <ul className="mt-10 flex w-full max-w-[365px] flex-col gap-3">
       {benefits.map((item, idx) => (
         <li key={idx} className="flex items-center gap-2">
-          <CheckIcon />
+          <Image 
+            src="/icons/check.png" 
+            alt="Check icon" 
+            width={16} 
+            height={16} 
+          />
           <span
             className={`text-[13px] text-white ${
               item.bold ? 'font-semibold' : 'font-normal'
@@ -44,9 +47,11 @@ function BenefitList() {
 
 
 
+
 export default function CTASection() {
   return (
-    <section className="relative w-full max-w-[430px] bg-white">
+    // <section className="relative w-full max-w-[430px] bg-white">
+    <section className="relative w-full bg-white bg-white">
       {/* 파란 배경 */}
       <div className="absolute left-0 top-[77px] h-[588px] w-full bg-[#2855DD]" />
 

@@ -21,7 +21,8 @@ export const contractIssues = [
 
 export default function RealitySection() {
   return (
-    <section className="relative mx-auto w-[430px] bg-white overflow-hidden px-4 py-8">
+    // <section className="relative mx-auto w-[430px] bg-white overflow-hidden px-4 py-8">
+    <section className="bg-white px-4 py-12">
       {/* Title */}
       <h2 className="mb-6 text-center text-[22px] leading-[30px] text-black">
         이 계약, <strong className="font-bold">현실</strong>에서는 이렇게 작동합니다
